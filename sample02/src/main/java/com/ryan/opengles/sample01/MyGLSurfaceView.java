@@ -1,7 +1,7 @@
 package com.ryan.opengles.sample01;
 
 import android.content.Context;
-import android.opengl.GLES30;
+import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 
@@ -18,8 +18,8 @@ public class MyGLSurfaceView extends GLSurfaceView {
 
     public MyGLSurfaceView(Context context) {
         super(context);
-        // 设置opengl es版本为3.0
-        this.setEGLContextClientVersion(3);
+        // 设置opengl es版本为2.0
+        this.setEGLContextClientVersion(2);
 
         mRenderer=new SceneRenderer();
         this.setRenderer(mRenderer);
@@ -31,7 +31,7 @@ public class MyGLSurfaceView extends GLSurfaceView {
         public void onDrawFrame(GL10 gl)
         {
             //清除深度缓冲与颜色缓冲
-            GLES30.glClear( GLES30.GL_DEPTH_BUFFER_BIT | GLES30.GL_COLOR_BUFFER_BIT);
+            GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
 
 
         }
